@@ -1,0 +1,625 @@
+[dotenv] Set [36mAI_SERVICE_URL[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USERNAME[0m, [36mSHOPIFY_ANALYTICS_DATABASE_PASSWORD[0m, [36mSHOPIFY_API_KEY[0m, [36mSHOPIFY_API_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (291.4ms)[0m  [1m[35mCREATE DATABASE "shopify_analytics_development" ENCODING = 'unicode'[0m
+[dotenv] Set [36mAI_SERVICE_URL[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USERNAME[0m, [36mSHOPIFY_ANALYTICS_DATABASE_PASSWORD[0m, [36mSHOPIFY_API_KEY[0m, [36mSHOPIFY_API_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mAI_SERVICE_URL[0m, [36mDATABASE_URL[0m, [36mSHOPIFY_ANALYTICS_DATABASE_PASSWORD[0m, [36mSHOPIFY_API_KEY[0m, [36mSHOPIFY_API_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (280.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (286.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (276.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7136310239230215960)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (276.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (272.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (283.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-12-17 07:42:14.841816', '2025-12-17 07:42:14.841822') RETURNING "key"[0m
+Migrating to CreateStores (20240101000000)
+  [1m[36mTRANSACTION (279.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (660.9ms)[0m  [1m[35mCREATE TABLE "stores" ("id" bigserial primary key, "shop_domain" character varying NOT NULL, "access_token" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (276.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_stores_on_shop_domain" ON "stores" ("shop_domain")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (278.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240101000000') RETURNING "version"[0m
+  [1m[36mTRANSACTION (283.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (279.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7136310239230215960)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (283.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (279.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mAI_SERVICE_URL[0m, [36mDATABASE_URL[0m, [36mSHOPIFY_ANALYTICS_DATABASE_PASSWORD[0m, [36mSHOPIFY_API_KEY[0m, [36mSHOPIFY_API_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (295.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mAI_SERVICE_URL[0m, [36mDATABASE_URL[0m, [36mSHOPIFY_ANALYTICS_DATABASE_PASSWORD[0m, [36mSHOPIFY_API_KEY[0m, [36mSHOPIFY_API_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (277.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7136310239230215960)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (295.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (304.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (279.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(7136310239230215960)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (281.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (286.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mAI_SERVICE_URL[0m, [36mDATABASE_URL[0m, [36mSHOPIFY_ANALYTICS_DATABASE_PASSWORD[0m, [36mSHOPIFY_API_KEY[0m, [36mSHOPIFY_API_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (272.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStore Load (293.1ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[36mTRANSACTION (285.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStore Create (562.3ms)[0m  [1m[32mINSERT INTO "stores" ("shop_domain", "access_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["access_token", "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"], ["created_at", "2025-12-17 07:44:34.332384"], ["updated_at", "2025-12-17 07:44:34.332384"]]
+  [1m[36mTRANSACTION (270.9ms)[0m  [1m[35mCOMMIT[0m
+[dotenv] Set [36mAI_SERVICE_URL[0m, [36mDATABASE_URL[0m, [36mSHOPIFY_ANALYTICS_DATABASE_PASSWORD[0m, [36mSHOPIFY_API_KEY[0m, [36mSHOPIFY_API_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 13:17:14 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (291.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NameError (uninitialized constant ApplicationController):
+  
+app/controllers/api/v1/questions_controller.rb:1:in '<top (required)>'
+[dotenv] Set [36mAI_SERVICE_URL[0m, [36mDATABASE_URL[0m, [36mSHOPIFY_ANALYTICS_DATABASE_PASSWORD[0m, [36mSHOPIFY_API_KEY[0m, [36mSHOPIFY_API_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 13:19:26 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (290.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "What are my total sales?"}
+  [1m[36mStore Load (280.0ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 8751ms (Views: 0.4ms | ActiveRecord: 4296.4ms | Allocations: 17778)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 13:22:23 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "What are my total sales?"}
+  [1m[36mStore Load (280.6ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 2593ms (Views: 0.1ms | ActiveRecord: 280.6ms | Allocations: 965)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 13:23:50 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "What are my total sales?"}
+  [1m[36mStore Load (277.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 15313ms (Views: 0.9ms | ActiveRecord: 277.2ms | Allocations: 999)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 13:29:59 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "What are my total sales?"}
+  [1m[36mStore Load (272.9ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 19194ms (Views: 0.3ms | ActiveRecord: 2819.5ms | Allocations: 4048)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 13:31:28 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "What are my total sales?"}
+  [1m[36mStore Load (310.8ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 11223ms (Views: 0.6ms | ActiveRecord: 310.8ms | Allocations: 959)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 13:36:51 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "What are my total sales?"}
+  [1m[36mStore Load (311.6ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 15845ms (Views: 0.2ms | ActiveRecord: 311.6ms | Allocations: 964)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 13:39:23 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "What are my total sales?"}
+  [1m[36mStore Load (274.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 14059ms (Views: 0.8ms | ActiveRecord: 1443.0ms | Allocations: 4385)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 13:49:30 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "What are my total sales?"}
+  [1m[36mStore Load (276.8ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 15800ms (Views: 0.6ms | ActiveRecord: 2713.6ms | Allocations: 4038)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 13:52:30 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "What are my total sales?"}
+  [1m[36mStore Load (268.5ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 7503ms (Views: 0.1ms | ActiveRecord: 268.4ms | Allocations: 963)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 14:19:06 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Who are my top customers?"}
+  [1m[36mStore Load (280.0ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 15334ms (Views: 0.4ms | ActiveRecord: 2872.5ms | Allocations: 7268)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 14:20:00 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "What were my top 5 selling products last week?"}
+  [1m[36mStore Load (271.7ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 9652ms (Views: 0.1ms | ActiveRecord: 271.7ms | Allocations: 966)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 14:21:56 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "What were my top 5 selling products last week?"}
+  [1m[36mStore Load (270.6ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 9656ms (Views: 0.2ms | ActiveRecord: 270.6ms | Allocations: 959)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 14:30:07 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How much inventory should I reorder based on last 30 days sales?"}
+  [1m[36mStore Load (283.9ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 16019ms (Views: 0.2ms | ActiveRecord: 2911.0ms | Allocations: 4038)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 14:33:09 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Which customers placed repeat orders in the last 90 days?"}
+  [1m[36mStore Load (303.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 10470ms (Views: 0.2ms | ActiveRecord: 303.3ms | Allocations: 959)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 14:33:32 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Which customers placed repeat orders in the last 90 days?"}
+  [1m[36mStore Load (278.8ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 11303ms (Views: 0.2ms | ActiveRecord: 278.8ms | Allocations: 953)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 14:36:55 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Which customers placed repeat orders in the last 90 days?"}
+  [1m[36mStore Load (264.9ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 10290ms (Views: 0.2ms | ActiveRecord: 264.9ms | Allocations: 966)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 14:37:44 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Which products are likely to go out of stock in 7 days?"}
+  [1m[36mStore Load (270.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 9092ms (Views: 0.1ms | ActiveRecord: 270.3ms | Allocations: 950)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 14:40:15 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Which products are likely to go out of stock in 7 days?"}
+  [1m[36mStore Load (299.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 10530ms (Views: 0.2ms | ActiveRecord: 299.3ms | Allocations: 966)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 14:44:52 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How many units of Product Lightweight Sunglasses will I need next month?"}
+  [1m[36mStore Load (272.8ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 8698ms (Views: 0.1ms | ActiveRecord: 272.8ms | Allocations: 965)
+
+
+[dotenv] Set [36mAI_SERVICE_URL[0m, [36mDATABASE_URL[0m, [36mSHOPIFY_ANALYTICS_DATABASE_PASSWORD[0m, [36mSHOPIFY_API_KEY[0m, [36mSHOPIFY_API_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 15:47:56 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (287.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How many units of Product Lightweight Sunglasses will I need next month?"}
+  [1m[36mStore Load (281.0ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 14058ms (Views: 0.2ms | ActiveRecord: 4272.8ms | Allocations: 17789)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 15:49:59 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How many units of Product Lightweight Sunglasses will I need next month?"}
+  [1m[36mStore Load (275.5ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 10647ms (Views: 0.1ms | ActiveRecord: 275.5ms | Allocations: 964)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 15:50:33 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Which products are likely to go out of stock in 7 days?"}
+  [1m[36mStore Load (279.6ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 6740ms (Views: 0.1ms | ActiveRecord: 279.6ms | Allocations: 962)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 15:52:20 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Which products are likely to go out of stock in 7 days?"}
+  [1m[36mStore Load (280.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 7539ms (Views: 0.1ms | ActiveRecord: 280.3ms | Allocations: 963)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 15:55:30 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Which products are likely to go out of stock in 7 days?"}
+  [1m[36mStore Load (296.4ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 14710ms (Views: 0.2ms | ActiveRecord: 296.4ms | Allocations: 970)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 15:57:34 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "What are my total sales?"}
+  [1m[36mStore Load (280.4ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 6276ms (Views: 0.1ms | ActiveRecord: 280.4ms | Allocations: 962)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 15:58:35 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "What are my total sales in last 7 days?"}
+  [1m[36mStore Load (279.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 8826ms (Views: 0.2ms | ActiveRecord: 279.3ms | Allocations: 965)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 16:01:45 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Which customers placed repeat orders in the last 90 day"}
+  [1m[36mStore Load (280.2ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 9268ms (Views: 0.1ms | ActiveRecord: 280.2ms | Allocations: 958)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 16:02:35 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How much inventory should I reorder based on last 30 days sales?"}
+  [1m[36mStore Load (275.1ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 10454ms (Views: 0.1ms | ActiveRecord: 275.1ms | Allocations: 958)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 16:05:01 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How much inventory should I reorder?"}
+  [1m[36mStore Load (289.0ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 7032ms (Views: 0.1ms | ActiveRecord: 289.0ms | Allocations: 956)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 16:07:58 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Explain my sales for the last 30 days"}
+  [1m[36mStore Load (289.1ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 20910ms (Views: 0.2ms | ActiveRecord: 289.0ms | Allocations: 969)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 16:10:11 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How many units of Product Eco-friendly Sunglasses will I need next month?"}
+  [1m[36mStore Load (284.4ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 6523ms (Views: 0.1ms | ActiveRecord: 284.4ms | Allocations: 962)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 16:11:12 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How many units of Product smart keyboard will I need next month?"}
+  [1m[36mStore Load (326.6ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 7331ms (Views: 0.3ms | ActiveRecord: 326.5ms | Allocations: 963)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 16:12:31 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How many units of Product smart keyboard i have"}
+  [1m[36mStore Load (283.9ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 5078ms (Views: 0.2ms | ActiveRecord: 283.9ms | Allocations: 961)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 16:15:26 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How many units of Product smart keyboard i have"}
+  [1m[36mStore Load (282.2ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 6923ms (Views: 0.1ms | ActiveRecord: 282.1ms | Allocations: 964)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 16:16:19 +0530
+Processing by Api::V1::QuestionsController#create as */*
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "total sales until now"}
+  [1m[36mStore Load (279.4ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 14507ms (Views: 0.3ms | ActiveRecord: 279.4ms | Allocations: 963)
+
+
+[dotenv] Set [36mAI_SERVICE_URL[0m, [36mDATABASE_URL[0m, [36mSHOPIFY_ANALYTICS_DATABASE_PASSWORD[0m, [36mSHOPIFY_API_KEY[0m, [36mSHOPIFY_API_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started OPTIONS "/api/v1/questions" for ::1 at 2025-12-17 16:38:43 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (280.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/questions"):
+  
+[dotenv] Set [36mAI_SERVICE_URL[0m, [36mDATABASE_URL[0m, [36mSHOPIFY_ANALYTICS_DATABASE_PASSWORD[0m, [36mSHOPIFY_API_KEY[0m, [36mSHOPIFY_API_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 16:40:05 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (286.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "what is the sales report??"}
+  [1m[36mStore Load (283.9ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 22385ms (Views: 0.3ms | ActiveRecord: 4423.5ms | Allocations: 17779)
+
+
+[dotenv] Set [36mAI_SERVICE_URL[0m, [36mDATABASE_URL[0m, [36mSHOPIFY_ANALYTICS_DATABASE_PASSWORD[0m, [36mSHOPIFY_API_KEY[0m, [36mSHOPIFY_API_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 17:19:19 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (291.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Top products this month"}
+  [1m[36mStore Load (278.0ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 13949ms (Views: 0.5ms | ActiveRecord: 4188.8ms | Allocations: 17783)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 17:20:29 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "which top products are sold this month?"}
+  [1m[36mStore Load (280.1ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 7845ms (Views: 0.2ms | ActiveRecord: 280.0ms | Allocations: 970)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 17:21:12 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "which product like the product names mostly sold this month?"}
+  [1m[36mStore Load (280.1ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 8223ms (Views: 0.3ms | ActiveRecord: 280.0ms | Allocations: 975)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-17 17:21:44 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "total sales?"}
+  [1m[36mStore Load (292.4ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 8169ms (Views: 0.1ms | ActiveRecord: 292.4ms | Allocations: 956)
+
+
+[dotenv] Set [36mAI_SERVICE_URL[0m, [36mDATABASE_URL[0m, [36mSHOPIFY_ANALYTICS_DATABASE_PASSWORD[0m, [36mSHOPIFY_API_KEY[0m, [36mSHOPIFY_API_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 14:17:48 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (312.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "give me total sales info??"}
+  [1m[36mStore Load (319.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 9390ms (Views: 0.1ms | ActiveRecord: 4764.5ms | Allocations: 17828)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 14:18:51 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "give me total sales info??"}
+  [1m[36mStore Load (308.5ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 20943ms (Views: 0.2ms | ActiveRecord: 308.5ms | Allocations: 1011)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 14:19:36 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "What were my top 5 selling products last week?"}
+  [1m[36mStore Load (304.9ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 8761ms (Views: 0.2ms | ActiveRecord: 304.9ms | Allocations: 964)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 14:20:24 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "top 5 selling products last week name of these products??"}
+  [1m[36mStore Load (305.9ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 8842ms (Views: 0.2ms | ActiveRecord: 305.9ms | Allocations: 964)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 14:20:51 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Which customers placed repeat orders in the last 90 days?"}
+  [1m[36mStore Load (311.1ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 10762ms (Views: 0.2ms | ActiveRecord: 311.1ms | Allocations: 941)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 14:21:35 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Which products are likely to go out of stock in 7 days?"}
+  [1m[36mStore Load (316.0ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 11634ms (Views: 0.2ms | ActiveRecord: 316.0ms | Allocations: 966)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 14:22:51 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How many units of Product Premium Keyboard  will I need next month?"}
+  [1m[36mStore Load (317.6ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 8434ms (Views: 0.1ms | ActiveRecord: 317.6ms | Allocations: 964)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 14:25:48 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "how many orders are placed last 30 days??"}
+  [1m[36mStore Load (312.5ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 7155ms (Views: 0.3ms | ActiveRecord: 312.5ms | Allocations: 973)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 14:30:09 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "which products my top 5 selling products last week???"}
+  [1m[36mStore Load (299.8ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 9604ms (Views: 0.1ms | ActiveRecord: 299.8ms | Allocations: 964)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 14:31:13 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How many units of Products  will I need next month?"}
+  [1m[36mStore Load (315.8ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 8408ms (Views: 0.1ms | ActiveRecord: 315.8ms | Allocations: 964)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 14:45:05 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How many units of Products  will I need next month?"}
+  [1m[36mStore Load (296.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 10958ms (Views: 0.3ms | ActiveRecord: 3112.0ms | Allocations: 4099)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 14:46:48 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How many units of Products  will I need next month?"}
+  [1m[36mStore Load (298.4ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 6601ms (Views: 0.1ms | ActiveRecord: 298.4ms | Allocations: 975)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 14:50:38 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How many units of Products  will I need next month?"}
+  [1m[36mStore Load (297.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 6938ms (Views: 0.2ms | ActiveRecord: 297.3ms | Allocations: 962)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 15:08:59 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "sales info??"}
+  [1m[36mStore Load (295.9ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 20439ms (Views: 0.2ms | ActiveRecord: 3086.8ms | Allocations: 4098)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 15:14:43 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "which date my product sold maximum?"}
+  [1m[36mStore Load (306.1ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 8863ms (Views: 0.4ms | ActiveRecord: 306.1ms | Allocations: 967)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 15:15:22 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "which date my product sold maximum in 90 days?"}
+  [1m[36mStore Load (301.8ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 12336ms (Views: 0.2ms | ActiveRecord: 301.7ms | Allocations: 960)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 15:18:45 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How much inventory should I reorder based on last 30 days sales?"}
+  [1m[36mStore Load (318.5ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 6306ms (Views: 0.4ms | ActiveRecord: 318.4ms | Allocations: 971)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 15:19:05 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How much inventory should I reorder based on last 30 days sales?"}
+  [1m[36mStore Load (297.8ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 5519ms (Views: 0.4ms | ActiveRecord: 297.7ms | Allocations: 960)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 15:22:43 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How much inventory should I reorder based on last 30 days sales?"}
+  [1m[36mStore Load (317.9ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 6104ms (Views: 0.2ms | ActiveRecord: 317.9ms | Allocations: 961)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 15:23:53 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "which products my top 5 selling products last week , give me the profuct names???"}
+  [1m[36mStore Load (299.8ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 5857ms (Views: 0.2ms | ActiveRecord: 299.7ms | Allocations: 970)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 15:29:37 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "which products my top 5 selling products last week , give me the profuct names???"}
+  [1m[36mStore Load (299.7ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 7078ms (Views: 0.1ms | ActiveRecord: 299.7ms | Allocations: 955)
+
+
+[dotenv] Set [36mAI_SERVICE_URL[0m, [36mDATABASE_URL[0m, [36mSHOPIFY_ANALYTICS_DATABASE_PASSWORD[0m, [36mSHOPIFY_API_KEY[0m, [36mSHOPIFY_API_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 16:01:13 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (314.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Can you provide the total sales information?"}
+  [1m[36mStore Load (310.8ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 21701ms (Views: 0.3ms | ActiveRecord: 4498.2ms | Allocations: 17835)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 16:02:07 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "What were my top 5 best-selling products last week? Please provide the product names."}
+  [1m[36mStore Load (294.9ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 6435ms (Views: 0.1ms | ActiveRecord: 294.8ms | Allocations: 994)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 16:03:01 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Which customers placed repeat orders in the last 90 days?"}
+  [1m[36mStore Load (295.2ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 8491ms (Views: 0.5ms | ActiveRecord: 295.1ms | Allocations: 955)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 16:03:31 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "Which products are likely to go out of stock in the next 7 days?"}
+  [1m[36mStore Load (299.5ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 5950ms (Views: 0.1ms | ActiveRecord: 299.5ms | Allocations: 961)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 16:03:56 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How many orders were placed in the last 30 days?"}
+  [1m[36mStore Load (306.6ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 8170ms (Views: 0.1ms | ActiveRecord: 306.5ms | Allocations: 963)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 16:04:23 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "On which date did my product sell the most?"}
+  [1m[36mStore Load (299.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 11896ms (Views: 0.1ms | ActiveRecord: 299.3ms | Allocations: 960)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 16:04:58 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "On which date did my product sell the most in the last 90 days?"}
+  [1m[36mStore Load (300.0ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 7801ms (Views: 0.1ms | ActiveRecord: 300.0ms | Allocations: 956)
+
+
+Started POST "/api/v1/questions" for ::1 at 2025-12-18 16:05:24 +0530
+Processing by Api::V1::QuestionsController#create as HTML
+  Parameters: {"store_id" => "auto-shopai.myshopify.com", "question" => "How much inventory should I reorder based on sales from the last 30 days?"}
+  [1m[36mStore Load (300.0ms)[0m  [1m[34mSELECT "stores".* FROM "stores" WHERE "stores"."shop_domain" = $1 LIMIT $2[0m  [["shop_domain", "auto-shopai.myshopify.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/questions_controller.rb:3:in 'Api::V1::QuestionsController#create'
+Completed 200 OK in 5961ms (Views: 0.1ms | ActiveRecord: 300.0ms | Allocations: 961)
+
+

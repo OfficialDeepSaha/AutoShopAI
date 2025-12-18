@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  url: postgresql://shopify_fqj7_user:rttlQegSEboPalUncomt0qkGCfF8e7yK@dpg-d515rot6ubrc73dcfd3g-a.oregon-postgres.render.com/shopify_fqj7
+  # database: shopify_analytics_development
+  # username: <%= ENV.fetch("DATABASE_USERNAME") { "postgres" } %>
+  # password: <%= ENV.fetch("DATABASE_PASSWORD") { "password" } %>
+
+test:
+  <<: *default
+  database: shopify_analytics_test
+
+production:
+  <<: *default
+  database: shopify_analytics_production
+  username: shopify_analytics
+  password: <%= ENV["SHOPIFY_ANALYTICS_DATABASE_PASSWORD"] %>
