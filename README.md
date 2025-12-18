@@ -216,15 +216,15 @@ curl -X POST "http://localhost:8000/ask" \
 
 ```mermaid
 flowchart TD
-  U[User Browser] --> F[Frontend (Vite/React)]
-  F -->|HTTPS: VITE_API_URL| R[Rails API]
-  R -->|POST /api/v1/questions| P[Python AI Service]
-  R -->|DB read/write| DB[(Postgres: stores)]
-  P -->|GraphQL: shopifyqlQuery| S[(Shopify Admin GraphQL)]
-  P -->|LLM calls| O[(OpenAI)]
-  P -->|JSON answer| R
-  R -->|JSON answer| F
-  F -->|Markdown render| U
+  U[User] --> F[Frontend]
+  F --> R[Rails API]
+  R --> P[Python AI Service]
+  R --> DB[Postgres]
+  P --> S[Shopify GraphQL]
+  P --> O[OpenAI]
+  P --> R
+  R --> F
+  F --> U
 ```
 
 ---
